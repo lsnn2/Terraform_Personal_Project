@@ -15,9 +15,7 @@ variable "MYIP" {
   default = "142.113.226.55/32"
 }
 
-variable "VPCID" {
-  default = "vpc-0927e8e29721bc9eb"
-}
+
 
 resource "aws_key_pair" "pgadmin4" {
   key_name   = "pgadmin4"
@@ -25,7 +23,7 @@ resource "aws_key_pair" "pgadmin4" {
 }
 
 resource "aws_security_group" "pgadmin4_sg" {
-  vpc_id      = var.VPCID
+  vpc_id      = "vpc-0927e8e29721bc9eb"
   name        = "pgadmin4-sg"
   description = "Sec Grp for pgadmin"
   egress {
