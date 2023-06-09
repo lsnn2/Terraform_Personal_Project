@@ -59,6 +59,7 @@ resource "aws_instance" "pgadmin4-instance" {
     spot_options {
       max_price = 0.004
     }
+  }
 
   provisioner "file" {
     source      = "pgadmin4.sh"
