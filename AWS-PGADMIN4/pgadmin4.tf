@@ -61,6 +61,9 @@ resource "aws_instance" "pgadmin4-instance" {
       max_price = 0.004
     }
   }
+   tags = {
+    Name = "pgadmin4"
+  }
 
   provisioner "file" {
     source      = "pgadmin4.sh"
@@ -78,6 +81,6 @@ resource "aws_instance" "pgadmin4-instance" {
   connection {
     user        = "centos"
     private_key = var.privid
-    host        = aws_instance.pgadmin4-instance
+    host        = aws_instance.pgadmin4-instance.public_ip
   }
 }
