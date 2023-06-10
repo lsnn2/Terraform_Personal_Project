@@ -7,4 +7,4 @@ sudo systemctl enable postgresql-12
 sudo systemctl start postgresql-12
 sudo rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
 sudo yum install -y pgadmin4-web
-sudo /usr/pgadmin4/bin/setup-web.sh -y
+sudo /usr/pgadmin4/bin/setup-web.sh --yes
