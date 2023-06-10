@@ -51,16 +51,18 @@ resource "aws_security_group" "pgadmin4_sg" {
 
 resource "aws_instance" "pgadmin4-instance" {
   ami                    = "ami-002070d43b0a4f171"
-  instance_type          = "t2.micro"
-  availability_zone      = "us-east-1d"
-  key_name               = aws_key_pair.pgadmin4.key_name
-  vpc_security_group_ids = [aws_security_group.pgadmin4_sg.id]
-    
   instance_market_options {
     market_type = "spot"
     spot_options {
       max_price = 0.004000
     }
+  }
+  instance_type          = "t2.micro"
+  availability_zone      = "us-east-1d"
+  key_name               = aws_key_pair.pgadmin4.key_name
+  vpc_security_group_ids = [aws_security_group.pgadmin4_sg.id]
+    
+ 
 
   
   provisioner "file" {
