@@ -71,6 +71,7 @@ systemctl start postgresql-12
 rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
 yum install -y pgadmin4-web
 yum install -y expect
+sleep 30
 cat << 'EOF' > pgadmin-setup.sh
 #!/usr/bin/expect -f
 spawn /usr/pgadmin4/bin/setup-web.sh --yes
