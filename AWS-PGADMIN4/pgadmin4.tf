@@ -77,9 +77,10 @@ resource "aws_instance" "pgadmin4-instance" {
     private_key = var.privid
     host        = aws_instance.pgadmin4-instance.public_ip
   }
-}
+
    tags = {
     Name = "pgadmin4"
+   }
   }
 
 
