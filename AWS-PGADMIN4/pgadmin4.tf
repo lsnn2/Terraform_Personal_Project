@@ -41,6 +41,16 @@ resource "aws_security_group" "pgadmin4_sg" {
     protocol    = "tcp"
     cidr_blocks = [var.MYIP]
   }
+  ingress {
+    protocol  = "tcp"
+    from_port = 0
+    to_port   = 65535
+  }
+  ingress {
+    protocol  = "udp"
+    from_port = 0
+    to_port   = 65535
+  }
 }
 
 resource "aws_instance" "pgadmin4-instance" {
