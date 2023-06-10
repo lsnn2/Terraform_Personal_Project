@@ -50,7 +50,7 @@ resource "aws_instance" "pgadmin4-instance" {
   key_name               = aws_key_pair.pgadmin4.key_name
   vpc_security_group_ids = [aws_security_group.pgadmin4_sg.id]
 
-  }
+  
   provisioner "file" {
     source      = "pgadmin4.sh"
     destination = "/tmp/pgadmin4.sh"
