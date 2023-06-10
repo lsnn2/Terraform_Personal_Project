@@ -82,6 +82,3 @@ resource "aws_instance" "pgadmin4-instance" {
     Name = "pgadmin4"
    }
   }
-
-
-}
