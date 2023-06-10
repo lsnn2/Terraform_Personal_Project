@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo -i
 sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 sudo yum install -y postgresql12-server
 sudo /usr/pgsql-12/bin/postgresql-12-setup initdb
