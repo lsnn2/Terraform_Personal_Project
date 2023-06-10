@@ -58,7 +58,7 @@ resource "aws_instance" "pgadmin4-instance" {
   instance_market_options {
     market_type = "spot"
     spot_options {
-      max_price = 0.004
+      max_price = 0.004000
     }
   }
    tags = {
