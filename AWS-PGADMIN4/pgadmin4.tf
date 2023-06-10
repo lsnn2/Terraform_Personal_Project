@@ -61,7 +61,7 @@ resource "aws_instance" "pgadmin4-instance" {
       max_price = 0.004000
     }
   }
-  user_data =   user_data = <<-EOT
+  user_data = <<-EOT
 #!/bin/bash
 sudo -i
 sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
