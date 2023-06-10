@@ -55,6 +55,12 @@ resource "aws_instance" "pgadmin4-instance" {
   availability_zone      = "us-east-1d"
   key_name               = aws_key_pair.pgadmin4.key_name
   vpc_security_group_ids = [aws_security_group.pgadmin4_sg.id]
+    
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      max_price = 0.004000
+    }
 
   
   provisioner "file" {
