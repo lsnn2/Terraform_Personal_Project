@@ -86,3 +86,7 @@ resource "aws_instance" "pgadmin4-instance" {
     Name = "pgadmin4"
    }
   }
+
+output "public_ip" {
+  value = aws_instance.pgadmin4-instance.public_ip
+}
