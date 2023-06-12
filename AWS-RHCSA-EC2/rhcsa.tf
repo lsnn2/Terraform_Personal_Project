@@ -44,7 +44,7 @@ resource "aws_security_group" "rhcsa_sg" {
 }
 
 resource "aws_instance" "rhcsa" {
-  ami                    = "ami-026ebd4cfe2c043b2"
+  ami                    = "ami-030f1f74b3569f163"
   instance_market_options {
     market_type = "spot"
     spot_options {
