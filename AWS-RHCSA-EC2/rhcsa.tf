@@ -48,7 +48,7 @@ resource "aws_instance" "rhcsa" {
   instance_market_options {
     market_type = "spot"
     spot_options {
-      max_price = 0.004000
+      max_price = 0.007000
     }
   }
   instance_type          = "t2.micro"
