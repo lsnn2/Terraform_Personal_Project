@@ -62,5 +62,5 @@ resource "aws_instance" "rhcsa" {
   }
 
 output "public_ip" {
-  value = aws_instance.pgadmin4-instance.public_ip
+  value = aws_instance.rhcsa.public_ip
 }
