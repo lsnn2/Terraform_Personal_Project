@@ -78,5 +78,5 @@ resource "azurerm_linux_virtual_machine" "test" {
 }
 
 output "public_ip" {
-  value = azurerm_public_ip.test.public_ip
+  value = azurerm_public_ip.test.ip_address
 }
