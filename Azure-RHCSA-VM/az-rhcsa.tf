@@ -50,18 +50,18 @@ resource "azurerm_network_interface" "test" {
 }
 
 # Create a virtual machine
-resource "azurerm_virtual_machine" "test" {
+resource "azurerm_linux_virtual_machine" "test" {
   name                  = "rhcsa"
   location              = azurerm_resource_group.test.location
   resource_group_name   = azurerm_resource_group.test.name
   network_interface_ids = ["${azurerm_network_interface.test.id}"]
-  vm_size               = "Standard_B1s"
+  size               = "Standard_B1s"
 
   admin_ssh_key {
     username   = "adminuser"
     public_key = var.pubid
   }
-  storage_os_disk {
+  os_disk {
     caching           = "ReadWrite"
     managed_disk_type = "Standard_LRS"
   }
@@ -74,4 +74,8 @@ resource "azurerm_virtual_machine" "test" {
   }
 
 
+}
+
+output "public_ip" {
+  value = azurerm_public_ip.test.public_ip
 }
