@@ -6,7 +6,7 @@ variable "pubid" {
   type        = string
 }
 
-resource "azurerm_resource_group" "rhcsa" {
+resource "azurerm_resource_group" "test" {
   name     = "rhcsa-resource-group"
   location = "eastus"
 }
@@ -15,8 +15,8 @@ resource "azurerm_resource_group" "rhcsa" {
 resource "azurerm_virtual_network" "test" {
   name                = "rhcsa-vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.rhcsa.location
-  resource_group_name = azurerm_resource_group.rhcsa.name
+  location            = azurerm_resource_group.test.location
+  resource_group_name = azurerm_resource_group.test.name
 }
 
 # Create a subnet
