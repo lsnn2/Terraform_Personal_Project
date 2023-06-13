@@ -55,6 +55,7 @@ resource "azurerm_linux_virtual_machine" "test" {
   location              = azurerm_resource_group.test.location
   resource_group_name   = azurerm_resource_group.test.name
   network_interface_ids = ["${azurerm_network_interface.test.id}"]
+  admin_username      = "adminuser"
   size               = "Standard_B1s"
 
   admin_ssh_key {
@@ -63,10 +64,10 @@ resource "azurerm_linux_virtual_machine" "test" {
   }
   os_disk {
     caching           = "ReadWrite"
-    managed_disk_type = "Standard_LRS"
+    storage_account_type = "Standard_LRS"
   }
 
-  storage_image_reference {
+  source_image_reference {
     publisher = "RedHat"
     offer     = "RHEL"
     sku       = "8-lvm-gen2"
