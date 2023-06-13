@@ -44,11 +44,11 @@ resource "aws_security_group" "rhcsa_sg" {
 }
 
 resource "aws_instance" "rhcsa" {
-  ami                    = "ami-06640050dc3f556bb"
+  ami                    = "ami-01ef8ca6adf00d8cd"
   instance_market_options {
     market_type = "spot"
     spot_options {
-      max_price = 0.008
+      max_price = 0.004
     }
   }
   instance_type          = "t2.micro"
