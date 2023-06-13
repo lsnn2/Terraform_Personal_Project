@@ -60,7 +60,3 @@ resource "aws_instance" "rhcsa" {
     Name = "rhcsa"
    }
   }
-
-output "public_ip" {
-  value = aws_instance.rhcsa.ip_address
-}
