@@ -13,7 +13,7 @@ variable "pubid" {
 resource "aws_lightsail_instance" "outline-instance" {
   name              = "outline-instance"
   availability_zone = "eu-west-2a"
-  blueprint_id      = "ubuntu_18_04"
+  blueprint_id      = "ubuntu_24_04"
   bundle_id         = "nano_2_0"
   key_pair_name     = aws_lightsail_key_pair.outline-key.name
   provisioner "file" {
