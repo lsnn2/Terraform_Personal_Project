@@ -1,6 +1,6 @@
 provider "aws" {
 
-  region = "eu-west-2"
+  region = "ca-central-1"
 }
 
 variable "privid" {
