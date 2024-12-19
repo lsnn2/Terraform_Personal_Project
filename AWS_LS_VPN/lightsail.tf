@@ -14,7 +14,7 @@ resource "aws_lightsail_instance" "outline-instance" {
   name              = "outline-instance"
   availability_zone = "ap-southeast-2c"
   blueprint_id      = "ubuntu_24_04"
-  bundle_id         = "micro_3_0"
+  bundle_id         = "micro_2_0"
   key_pair_name     = aws_lightsail_key_pair.outline-key.name
   provisioner "file" {
     source      = "DeployOutlineVPN.sh"
