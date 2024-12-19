@@ -1,6 +1,6 @@
 provider "aws" {
 
-  region = "ap-southeast-2"
+  region = "ca-central-1"
 }
 
 variable "privid" {
@@ -12,9 +12,9 @@ variable "pubid" {
 
 resource "aws_lightsail_instance" "outline-instance" {
   name              = "outline-instance"
-  availability_zone = "ap-southeast-2c"
+  availability_zone = "ca-central-1b"
   blueprint_id      = "ubuntu_24_04"
-  bundle_id         = "micro_2_0"
+  bundle_id         = "micro_3_0"
   key_pair_name     = aws_lightsail_key_pair.outline-key.name
   provisioner "file" {
     source      = "DeployOutlineVPN.sh"
