@@ -1,6 +1,6 @@
 provider "aws" {
 
-  region = "ap-southeast-1"
+  region = "us-east-1"
 }
 
 variable "privid" {
@@ -12,7 +12,7 @@ variable "pubid" {
 
 resource "aws_lightsail_instance" "outline-instance" {
   name              = "outline-instance"
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "us-east-1c"
   blueprint_id      = "ubuntu_24_04"
   bundle_id         = "micro_3_0"
   key_pair_name     = aws_lightsail_key_pair.outline-key.name
@@ -50,11 +50,5 @@ resource "aws_lightsail_instance_public_ports" "outline" {
     protocol  = "udp"
     from_port = 0
     to_port   = 65535
-  }
-  port_info {
-    protocol  = "tcp"
-    from_port = 22
-    to_port   = 22
-    cidrs     = ["142.113.226.55/32"]
   }
 }
