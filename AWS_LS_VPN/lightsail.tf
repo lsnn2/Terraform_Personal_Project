@@ -1,6 +1,6 @@
 provider "aws" {
 
-  region = "us-east-1"
+  region = "eu-west-2"
 }
 
 variable "privid" {
@@ -12,7 +12,7 @@ variable "pubid" {
 
 resource "aws_lightsail_instance" "outline-instance" {
   name              = "outline-instance"
-  availability_zone = "us-east-1c"
+  availability_zone = "eu-west-2b"
   blueprint_id      = "ubuntu_24_04"
   bundle_id         = "micro_3_0"
   key_pair_name     = aws_lightsail_key_pair.outline-key.name
